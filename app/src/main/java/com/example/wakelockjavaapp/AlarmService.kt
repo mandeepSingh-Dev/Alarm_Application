@@ -46,7 +46,7 @@ class AlarmService : Service() {
             .setPriority(NotificationCompat.PRIORITY_MAX)
             .setCategory(NotificationCompat.CATEGORY_ALARM)
             .setSmallIcon(R.drawable.ic_launcher_background)
-         //   .setContentIntent(fullScreenPendingIntent)
+            .setContentIntent(fullScreenPendingIntent)
             .setOnlyAlertOnce(true)
             .setFullScreenIntent(fullScreenPendingIntent, true)
 
@@ -63,6 +63,7 @@ class AlarmService : Service() {
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             channel.setSound(null, null)
             notificationManager.createNotificationChannel(channel)
+
         }
     }
 

@@ -1,12 +1,17 @@
 package com.example.wakelockjavaapp
 
+import android.annotation.SuppressLint
 import android.app.KeyguardManager
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 
 class AlertActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         window.addFlags(
@@ -20,8 +25,13 @@ class AlertActivity : AppCompatActivity() {
             setTurnScreenOn(true)
             setShowWhenLocked(true)
         }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alert)
+
+        val imagebutton = findViewById<ImageButton>(R.id.cancelAlarm)
+        imagebutton.setOnClickListener {
+        }
 
 
 

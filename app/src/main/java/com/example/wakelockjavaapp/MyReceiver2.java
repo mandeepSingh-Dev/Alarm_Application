@@ -39,15 +39,16 @@ public class MyReceiver2 extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+/*
         PowerManager powerManager = (PowerManager) context.getSystemService(POWER_SERVICE);
         PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "com.example.wakelockjavaapp::AlarmSericeTag");
         wakeLock.acquire(60000);
+*/
 
         Intent intent1 = new Intent(context, AlarmService.class);
 
         ContextCompat.startForegroundService(context, intent1);
-
     }
 
     /*@RequiresApi(api = Build.VERSION_CODES.O)
